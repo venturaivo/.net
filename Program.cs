@@ -1,21 +1,24 @@
-﻿using System;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
+        // Solicitar ao usuário dois números inteiros
+        Console.Write("Por favor, insira o primeiro número inteiro: ");
+        int primeiroNumero = int.Parse(Console.ReadLine());
 
-        Console.Write("Por favor, insira um valor em metros: ");
-        double metros = double.Parse(Console.ReadLine());
+        Console.Write("Por favor, insira o segundo número inteiro: ");
+        int segundoNumero = int.Parse(Console.ReadLine());
 
-        double quilometros = metros / 1000;
-        double decimetros = metros * 10;
-        double centimetros = metros * 100;
-        double milimetros = metros * 1000;
-
-        Console.WriteLine($"Valor em quilômetros: {quilometros} km");
-        Console.WriteLine($"Valor em decímetros: {decimetros} dm");
-        Console.WriteLine($"Valor em centímetros: {centimetros} cm");
-        Console.WriteLine($"Valor em milímetros: {milimetros} mm");
+        // Verificar se o segundo número é diferente de zero para evitar uma divisão por zero
+        if (segundoNumero != 0)
+        {
+            // Calcular e apresentar o resultado da divisão do primeiro pelo segundo
+            double resultadoDivisao = (double)primeiroNumero / segundoNumero;
+            Console.WriteLine($"O resultado da divisão de {primeiroNumero} por {segundoNumero} é: {resultadoDivisao}");
+        }
+        else
+        {
+            Console.WriteLine("Não é possível dividir por zero. Por favor, insira um segundo número diferente de zero.");
+        }
     }
 }
