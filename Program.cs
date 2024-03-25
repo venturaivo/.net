@@ -1,24 +1,29 @@
-﻿class Program
+﻿
+
+using System;
+class Program
 {
     static void Main(string[] args)
     {
-        // Solicitar ao usuário dois números inteiros
-        Console.Write("Por favor, insira o primeiro número inteiro: ");
-        int primeiroNumero = int.Parse(Console.ReadLine());
+     
+        Console.WriteLine("Por favor, digite sua idade:");
 
-        Console.Write("Por favor, insira o segundo número inteiro: ");
-        int segundoNumero = int.Parse(Console.ReadLine());
-
-        // Verificar se o segundo número é diferente de zero para evitar uma divisão por zero
-        if (segundoNumero != 0)
+   
+        if (int.TryParse(Console.ReadLine(), out int idade))
         {
-            // Calcular e apresentar o resultado da divisão do primeiro pelo segundo
-            double resultadoDivisao = (double)primeiroNumero / segundoNumero;
-            Console.WriteLine($"O resultado da divisão de {primeiroNumero} por {segundoNumero} é: {resultadoDivisao}");
+         
+            if (idade >= 18)
+            {
+                Console.WriteLine("Você é maior de idade.");
+            }
+            else
+            {
+                Console.WriteLine("Você não é maior de idade.");
+            }
         }
         else
         {
-            Console.WriteLine("Não é possível dividir por zero. Por favor, insira um segundo número diferente de zero.");
+            Console.WriteLine("Por favor, digite uma idade válida.");
         }
     }
 }
